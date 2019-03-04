@@ -184,6 +184,10 @@ NSDictionary<NSString *, id>* ParseSSURL(NSURL* url) {
     NSString *obfs = configArray[4];
     urlString = configArray[5];
     NSRange range = [urlString rangeOfString:@"/"];
+    // 修复因为URL字符串中符号不同导致无法扫码的问题
+    if (NSNotFound == range.location) {
+        range = [urlString rangeOfString:@"?"];
+    }
     NSString *passwd_encode = [urlString substringToIndex:range.location];
     NSString *password = decode64(passwd_encode);
     urlString = [urlString substringFromIndex:range.location + 1];
