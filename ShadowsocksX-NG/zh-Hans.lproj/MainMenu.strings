@@ -29,6 +29,9 @@
 /* Class = "NSMenuItem"; title = "扫描屏幕上的二维码..."; ObjectID = "Qe6-bF-paT"; */
 "Qe6-bF-paT.title" = "扫描屏幕上的二维码...";
 
+/* Class = "NSMenuItem"; title = "通过粘贴板中的URL添加..."; ObjectID = "OPZ-EE-xKI"; */
+"OPZ-EE-xKI.title" = "从粘贴板中的URL添加...";
+
 /* Class = "NSMenuItem"; title = "显示当前服务器的二维码..."; ObjectID = "R6A-96-Zcb"; */
 "R6A-96-Zcb.title" = "显示当前服务器的二维码...";
 

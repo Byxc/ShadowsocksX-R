@@ -9,6 +9,8 @@
 #ifndef QRCodeUtils_h
 #define QRCodeUtils_h
 
+void analysisURLFormPasteboard();
+
 void ScanQRCodeOnScreen();
 
 NSDictionary<NSString *, id>* ParseSSURL(NSURL* url);

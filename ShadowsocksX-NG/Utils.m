@@ -8,6 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreImage/CoreImage.h>
+#import <AppKit/AppKit.h>
+
+void analysisURLFormPasteboard() {
+    NSString *urlString = [[NSPasteboard generalPasteboard] stringForType:NSPasteboardTypeString];
+    
+    NSMutableArray *foundSSUrls = [NSMutableArray array];
+    
+    if ([urlString hasPrefix:@"ssr://"] || [urlString hasPrefix:@"ss://"]) {
+        [foundSSUrls addObject:[NSURL URLWithString:urlString]];
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"NOTIFY_FOUND_SS_URL"
+         object:nil
+         userInfo: @{ @"urls": foundSSUrls,
+                      @"source": @"qrcode"
+                      }
+         ];
+    }
+}
 
 void ScanQRCodeOnScreen() {
     /* displays[] Quartz display ID's */
